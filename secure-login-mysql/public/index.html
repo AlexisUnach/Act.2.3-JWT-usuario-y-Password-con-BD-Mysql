@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Seguro - HTTPS + JWT</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 420px;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
+    h2 {
+      color: #34495e;
+      margin: 20px 0 12px;
+      font-size: 18px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border 0.3s;
+    }
+    input:focus {
+      outline: none;
+      border-color: #3498db;
+      box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    #out {
+      margin-top: 20px;
+      padding: 12px;
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 150px;
+      overflow: auto;
+    }
+    .divider {
+      height: 1px;
+      background: #eee;
+      margin: 25px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Login Seguro (HTTPS + JWT)</h1>
+
+    <h2>Registro</h2>
+    <form id="register">
+      <div class="form-group">
+        <input name="name" placeholder="Nombre completo" required />
+      </div>
+      <div class="form-group">
+        <input name="email" type="email" placeholder="Correo electrónico" required />
+      </div>
+      <div class="form-group">
+        <input name="password" type="password" placeholder="Contraseña (mín. 6 caracteres)" required minlength="6" />
+      </div>
+      <button type="submit">Crear cuenta</button>
+    </form>
+
+    <div class="divider"></div>
+
+    <h2>Iniciar sesión</h2>
+    <form id="login">
+      <div class="form-group">
+        <input name="email" type="email" placeholder="Correo electrónico" required />
+      </div>
+      <div class="form-group">
+        <input name="password" type="password" placeholder="Contraseña" required />
+      </div>
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <pre id="out"></pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
